@@ -1,6 +1,9 @@
 pipeline {
-    agent iac
-
+    agent {
+    node {
+      label 'iac'
+    }
+}
     stages {
         stage('Checkout') {
             steps {
