@@ -20,8 +20,8 @@ pipeline {
 
     stage('Environment Build') {
       steps {
-        sh 'chmod +x /home/ubuntu/mira/izac2/mya.sh'
-		sh '/home/ubuntu/mira/izac2/mya.sh'
+        sh 'chmod +x mya.sh'
+		sh 'cat mya.sh'
       }
     }
 
@@ -37,11 +37,11 @@ pipeline {
     stage('terraform in Action') {
       steps {
 	  sh 'chmod +x /home/ubuntu/mira/izac2/mya.sh'
-	  sh '/home/ubuntu/mira/izac2/mya.sh'
+	  sh 'cat mya.sh'
 	  sh 'echo $AWS_ACCESS_KEY_ID'
 	  sh 'echo $AWS_SECRET_ACCESS_KEY'
 	  sh 'echo $AWS_SESSION_TOKEN'
-    sh 'terraform apply --auto-approve'
+    sh 'mya.sh'
       }
     }
 
